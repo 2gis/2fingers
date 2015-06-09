@@ -302,7 +302,7 @@ class MiscDbHelper
      */
     public function checkIfUnique()
     {
-        $t = $this->main_table;
+        $t = $this->current_table;
 
         // Исключаем из выборки использованные в тестах сущности
         if (isset(self::$used_ids[$t]))
