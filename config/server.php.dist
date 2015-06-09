@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'host' => 'hostname.test',
+    'dbhost' => 'hostname.host',
+    'dbname' => 'hostname',
+    'verbose' => true
+];

@@ -1,0 +1,21 @@
+
+<phpunit 
+    bootstrap="bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    stopOnFailure="false">
+
+    <testsuites>
+        <testsuite name="regression">
+            <directory>tests</directory>
+            <exclude>
+                <directory></directory>
+                <file></file>
+            </exclude>
+        </testsuite>
+
+    </testsuites>
+    
+</phpunit>

@@ -1,0 +1,4 @@
+/vendor
+.idea
+phpunit.phar
+config/server.php

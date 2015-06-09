@@ -1,0 +1,19 @@
+{
+    "name": "2fingers",
+    "description": "Project for testing Flamp Api",
+
+    "require": {
+        "php": ">=5.4",
+        "guzzle/guzzle": "3.9.*",
+        "henderjon/simple_scan_args": "1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "classes/",
+            "tests/BaseTest.php"
+        ],
+        "files": [
+            "classes/Functions.php"
+        ]
+    }
+}
