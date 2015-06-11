@@ -11,6 +11,8 @@
 
 **Обратите внимание**, в репозитории лишь базовые классы и примеры, фреймворк нужно адаптировать под архитектуру вашего API и структуру БД!
 
+По любым вопросам касательно 2fingers пишите на leaxfm@gmail.com или p.asanov@flamp.ru.
+
 ## Деплоймент и запуск
 
 ### Требуемые компоненты
@@ -145,7 +147,7 @@ class AddSomethingTest extends BaseTest
 }
 ```
 <p align="center">
-<img src="https://lh6.googleusercontent.com/z71VVOw9gLM8ZpRn0ks1vL5v6cncmI8KuSMHfNq_cyPqr1JPMJ5IRyIHM-x5RMYuu9kqA_V53qbqFxo=w1511-h993" alt="">
+<img src="https://hsto.org/files/8ac/516/8e9/8ac5168e93354774b488f348f506d489.png" alt="">
 </p>
 
 Параметризованный тест- это тест-шаблон, который принимает на вход N наборов данных, а на выходе выдает N реальных тестов.
@@ -176,15 +178,7 @@ class AddSomethingTest extends BaseTest
 
 Кроме того, т.к. тест параметризованный, на вход он должен принимать из дата провайдера параметры (тестовый набор) в виде списка аргументов.
 
-<p align="center">
-<img src="https://lh5.googleusercontent.com/E5sdHwkzAX1_pvJx-2_8wz0RPLUdG7pdqut0ol7eu7CwP6BRbrdv-m_nfQ1oFKLbaPuX3jL76l5n2B4=w1511-h993" alt="">
-</p>
-
 Большая часть аргументов - это и есть параметры запроса, взятые напрямую из документации. Помимо них, тестовый набор может содержать роль, под которой выполняется запрос, ожидаемый код ответа и, возможно, какие-то дополнительные булевые флаги.
-
-<p align="center">
-<img src="https://lh4.googleusercontent.com/H2FZ_vuCLxfuEj9qmBAQMkL7U3t37er4JhC2siyiGytMa-nKBvC2urqbEZfhDmP2tnS4cm1Qba_NY7A=w1511-h993" alt="">
-</p>
 
 Теперь понятно, как написать метод test:
 - задаем список аргументов для метода, соответствующий тестовому набору
@@ -324,7 +318,7 @@ $expected = [
 ### Детализированная схема теста
 
 <p align="center">
-<img src="https://lh6.googleusercontent.com/R4mIDMRqvPPNKTQlgyjvAsChDNUsBvRwaq_yaeavJvCqIZASEpK2PyvVpdgW_ge69isoqnJ2Vuf_0e4=w1511-h993" alt="">
+<img src="https://hsto.org/files/8aa/49a/2c9/8aa49a2c94a64fbe9b99ec64b3ad1a95.png" alt="">
 </p>
 
 ### Работа с БД
