@@ -32,6 +32,9 @@ class ApiHelper
         $this->request->setAccessToken($this->access_token);
 
         $this->response = $this->request->send();
+
+        if (substr($this->getResponseBody()->code, 0, 2) !== '20')
+            throw new Exception('FlampAPIHelper returned wrong response code');
     }
 
     public function getResponseBody()
