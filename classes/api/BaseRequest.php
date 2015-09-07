@@ -96,16 +96,25 @@ class BaseRequest
      */
     protected function prepareParams()
     {
-        // Для запросов с query помещаем параметры в URL, а массив параметров сбрасываем
-        if (strcasecmp($this->http_method, 'GET') == 0
-            || strcasecmp($this->http_method, 'DELETE') == 0) {
+        // Избавляемся от параметров со значением null
+        $params = [];
+        if (isset($this->params))
+            foreach($this->params as $key => $value)
+                if (isset($value))
+                    $params[$key] = $value;
 
-            $this->url->setQuery($this->params);
-            $this->params = null;
+        // Для запросов с query помещаем параметры в URL, а массив параметров сбрасываем
+        if (strcasecmp($this->http_method, 'GET') === 0
+            || strcasecmp($this->http_method, 'DELETE') === 0) {
+
+            $this->url->setQuery($params);
+            $params = null;
 
         } // Для запросов с body проверяем наличие картинки, и если она есть - подставляем к пути @, чтобы Guzzle загрузил её
-        elseif (isset($this->params['image']))
-            $this->params['image'] = '@' . $this->params['image'];
+        elseif (isset($params['image']))
+            $params['image'] = '@' . $params['image'];
+
+        $this->params = $params;
     }
 
     /**

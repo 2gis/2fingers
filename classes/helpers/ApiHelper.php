@@ -33,8 +33,17 @@ class ApiHelper
 
         $this->response = $this->request->send();
 
-        if (substr($this->getResponseBody()->code, 0, 2) !== '20')
-            throw new Exception('FlampAPIHelper returned wrong response code');
+        if (!$this->getResponseBody())
+            throw new Exception(
+                "\n{$this->request->logRequestHttpMethod()} {$this->request->logRequestUrl()}\nAPIHelper returned no response code"
+            );
+        else
+            $response_code = $this->getResponseBody()->code;
+
+        if (substr($response_code, 0, 2) !== '20')
+            throw new Exception(
+                "\n{$this->request->logRequestHttpMethod()} {$this->request->logRequestUrl()}\nAPIHelper returned wrong response code:\n\n{$this->response->getBody()}"
+            );
     }
 
     public function getResponseBody()

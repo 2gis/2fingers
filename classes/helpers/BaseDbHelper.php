@@ -25,7 +25,7 @@ class BaseDbHelper
     public function __construct($db_name, $db_host, $db_user, $db_password, $verbose = false)
     {
         $this->db = new PDO("pgsql:dbname={$db_name};host={$db_host};",
-            $db_user, $db_password);
+            $db_user, $db_password, [PDO::ATTR_PERSISTENT => true]);
         $this->verbose = $verbose;
     }
 
